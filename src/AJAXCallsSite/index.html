@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .btable select {
+            width: 100%;
+        }
+
+        .btable select option {
+            text-align: right;
+        }
+    </style>
+    <script type="text/javascript" src="/js/app.js" async></script>
+</head>
+<body>
+<table width="100%" class="btable">
+    <thead>
+    <tr>
+        <th>Call</th>
+        <th>Delay</th>
+        <th>Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Fast</td>
+        <td>&nbsp;</td>
+        <td>
+            <select id="fast-call-number">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Slow get</td>
+        <td>
+            <select id="slow-call-delay">
+                <option value="500">0.5s</option>
+                <option value="1000">1s</option>
+                <option value="2000">2s</option>
+                <option value="4000">4s</option>
+                <option value="6000">6s</option>
+                <option value="10000">10s</option>
+            </select>
+        </td>
+        <td>
+            <select id="slow-call-number">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Slow post</td>
+        <td>
+            <select id="post-call-delay">
+                <option value="500">0.5s</option>
+                <option value="1000">1s</option>
+                <option value="2000">2s</option>
+                <option value="4000">4s</option>
+                <option value="6000">6s</option>
+                <option value="10000">10s</option>
+            </select>
+        </td>
+        <td>
+            <select id="post-call-number">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <button id="go-button">GO!</button>
+</div>
+
+</body>
+</html>

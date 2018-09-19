@@ -1,0 +1,1 @@
+﻿<%@ Page Async="true" EnableSessionState="ReadOnly" Language="C#" AutoEventWireup="true" CodeBehind="PageMethods.aspx.cs" Inherits="AJAXCallsSite.PageMethods" %>
