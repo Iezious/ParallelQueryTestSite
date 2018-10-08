@@ -7,8 +7,9 @@ function init()
     let selNumPost = document.getElementById("post-call-number");
     let selDelaySlow = document.getElementById("slow-call-delay");
     let selDelayPost = document.getElementById("post-call-delay");
-
+    
     let btn = document.getElementById("go-button");
+    let sessionButton = document.getElementById("set-session-button");
     let activeQueries = 0;
 
     function incActive()
@@ -54,6 +55,12 @@ function init()
             incActive();
             httpSend("/post/", { reqno: reqno }, { wait: pdelay }, decActive, decActive);
         });
+    };
+
+    sessionButton.onclick = function ()
+    {
+        let reqno = (new Date()).getTime();
+        httpSend("/set/", { reqno: reqno }, null, () => {}, () => {});
     };
 }
 

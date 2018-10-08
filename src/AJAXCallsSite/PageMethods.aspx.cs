@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
@@ -33,18 +34,22 @@ namespace AJAXCallsSite
                 case "/post/":
                     await SlowPostCall();
                     break;
+                
+                case "/set/":
+                    await SetSessionValue();
+                    break;
             }
         }
 
         public async Task FastGetCall()
         {
             await Task.Yield();
-            Response.Write(DateTime.Now.ToString("o"));
+            Response.Write(Session["data"] ?? "na");
         }
         public async Task SlowGetCall()
         {
             await Task.Delay(int.TryParse(Request.QueryString["wait"], out var wait) ? wait : 4000);
-            Response.Write(DateTime.Now.ToString("o"));
+            Response.Write(Session["data"] ?? "na");
         }
 
         public async Task SlowPostCall()
@@ -59,8 +64,15 @@ namespace AJAXCallsSite
             });
 
             await Task.Delay(req["wait"]?.Value<int>() ?? 6000);
-            Response.Write(new Random().Next(100000000));
+            Response.Write(Session["data"] ?? "na");
         }
-        
+
+        public async Task SetSessionValue()
+        {
+            await Task.Yield();
+
+            Session["data"] = DateTime.Now.ToString("o");
+            Response.Write(Session["data"]);
+        }
     }
 }
